@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>xrmitch</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="aframe xrmitch">
+    <meta name="keywords" content="AFrame, JavaScript">
+    <meta name="author" content="Mitch Allen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <!-- TODO -->
+        </a-assets>
+        <a-entity id="rig" position="0 0 0">
+            <a-camera id="camera" look-controls="enabled: true"></a-camera>
+        </a-entity>
+        <a-entity id="maze-lines-30x30-30-neon-green"
+            gltf-model="url(https://olive-flying-parrotfish-580.mypinata.cloud/ipfs/Qmdrqj17UoyxritJmJdzpcR8Uwep3iiB631D1QtvHTcyTb)"
+            rotation="0 0 0" position="0.0 1.6 0" scale="0.12 0.12 0.12">
+        </a-entity>>
+        <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#222222"></a-plane>
+        <a-sky color="#333333"></a-sky>
+    </a-scene>
+    <div class="buttonBar">
+        <button disabled id="btnHelp" type="button" class="button-toolbar">
+            <span class="material-icons md-light md-48">help_outline</span>
+        </button>
+        <button id="btnForward" type="button" class="button-toolbar">
+            <span class="material-icons md-light md-48">arrow_upward</span>
+        </button>
+        <button id="btnBack" type="button" class="button-toolbar">
+            <span class="material-icons md-light md-48">arrow_downward</span>
+        </button>
+    </div>
+    <script type="module" src="./src/app.js"></script>
+</body>
