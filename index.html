@@ -11,12 +11,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/app.css">
+    <script>
+        // AFRAME.registerComponent('thumbstick-logging',{
+        //     init: function() {
+        //         this.el.addEventListener('thumbstickmoved', this.logThumbstick);
+        //     },
+        //     logThumbstick: function(evt) {
+        //         if( evt.detail.y > 0.95 ) { console.log("DOWN"); }
+        //         if( evt.detail.y < -0.95 ) { console.log("UP"); }
+        //         if( evt.detail.x > 0.95 ) { console.log("RIGHT"); }
+        //         if( evt.detail.x < -0.95 ) { console.log("LEFT"); }
+        //     }
+        // });
+    </script>
 </head>
 
 <body>
     <a-scene>
         <a-entity id="rig" position="0 0 0">
-            <a-camera id="camera" look-controls="enabled: true"></a-camera>
+            <a-camera id="camera" look-controls="enabled: true">
+                <!-- <a-cursor></a-cursor> -->
+            </a-camera>
+            <a-entity oculus-touch-controls="hand: left" thumbstick-move-where-looking></a-entity>
+            <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
         </a-entity>
         <a-entity id="maze-lines-30x30-30-neon-green"
             gltf-model="url(https://olive-flying-parrotfish-580.mypinata.cloud/ipfs/Qmdrqj17UoyxritJmJdzpcR8Uwep3iiB631D1QtvHTcyTb)"
