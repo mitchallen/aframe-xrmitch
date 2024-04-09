@@ -25,4 +25,10 @@ make PORT=8002
 ```
 * Then browse to that port: http://localhost:8002/
 
+* * *
 
+## Testing CloudFlare tags:
+
+```sh
+ make build CF_PAGES=1 CF_PAGES_COMMIT_SHA=abc
+```
