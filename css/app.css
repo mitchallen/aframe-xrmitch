@@ -9,7 +9,7 @@ body {
   
   .buttonBar {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     left: 0px;
     margin-left: 10px;
     /* font-size: 20px;
