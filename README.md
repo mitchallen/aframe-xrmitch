@@ -15,7 +15,7 @@ A-Frame experiments
 ```sh
 make 
 ```
-* Browse to: http://localhost:8000/src/
+* Browse to: http://localhost:8000
 
 ### Different port
 
@@ -23,7 +23,7 @@ make
 ```sh
 make PORT=8002
 ```
-* Then browse to that port: http://localhost:8002/src/
+* Then browse to that port: http://localhost:8002
 
 * * *
 
