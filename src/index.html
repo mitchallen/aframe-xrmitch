@@ -8,7 +8,7 @@
     <meta name="description" content="aframe xrmitch">
     <meta name="keywords" content="AFrame, JavaScript">
     <meta name="author" content="Mitch Allen">
-    <meta name="last-modified" content="2026-03-07T08:16:56">
+    <meta name="last-modified" content="2026-03-08T06:24:35">
     <meta name="commit-id" content="abc">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,10 +42,13 @@
             gltf-model="./models/maze-lines-30x30-30-neon-green.glb"
             rotation="0 0 0" position="0.0 1.6 0" scale="0.12 0.12 0.12">
         </a-entity>
-        <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="40" color="#444444"></a-plane>
+        <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="40" color="#444444"></a-plane> -->
         <a-sky color="#333333"></a-sky>
     </a-scene>
     <div class="buttonBar">
+        <button id="btnHome" type="button" class="button-toolbar">
+            <span class="material-icons md-light md-48">home</span>
+        </button>
         <button id="btnForward" type="button" class="button-toolbar">
             <span class="material-icons md-light md-48">arrow_upward</span>
         </button>
