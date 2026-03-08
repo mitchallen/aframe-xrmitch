@@ -19,21 +19,15 @@
     <a-scene button-movement>
         <a-entity id="rig" position="0 0 0">
             <a-camera id="camera" look-controls="enabled: true">
-                <!-- <a-cursor></a-cursor> -->
             </a-camera>
             <a-entity oculus-touch-controls="hand: left" thumbstick-move-where-looking></a-entity>
             <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
         </a-entity>
-        <!-- <a-entity id="maze-lines-30x30-30-neon-green"
-            gltf-model="url(https://olive-flying-parrotfish-580.mypinata.cloud/ipfs/Qmdrqj17UoyxritJmJdzpcR8Uwep3iiB631D1QtvHTcyTb)"
-            rotation="0 0 0" position="0.0 1.6 0" scale="0.12 0.12 0.12">
-        </a-entity> -->
         <a-entity id="marble-alpha"
             gltf-model="./models/marble-alpha.glb"
             rotation="0 0 0" position="0.0 1.6 -20.0" scale="2.5 2.5 2.5"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 40000; easing: linear">
         </a-entity>
-        <a-sphere color="black" position="0.0 1.6 -20.0"></a-sphere>
         <a-entity id="maze-cube-15x15-15-neon-fat"
             gltf-model="./models/maze-cube-15x15-15-neon-fat.glb"
             rotation="0 0 0" position="0.0 1.6 20" scale="0.5 0.5 0.5">
@@ -42,7 +36,6 @@
             gltf-model="./models/maze-lines-30x30-30-neon-green.glb"
             rotation="0 0 0" position="0.0 1.6 0" scale="0.12 0.12 0.12">
         </a-entity>
-        <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="2" height="40" color="#444444"></a-plane> -->
         <a-sky grid-sky></a-sky>
     </a-scene>
     <div class="buttonBar">
