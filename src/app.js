@@ -6,6 +6,40 @@ import {moveWhereLooking} from './move-where-looking.js'
 
 console.log("[xrmitch]: running.")
 
+async function loadObjects() {
+    try {
+        const response = await fetch('objects.yaml');
+        const yamlText = await response.text();
+        const data = jsyaml.load(yamlText);
+
+        const sceneEl = document.querySelector('a-scene');
+
+        const addEntities = () => {
+            data.objects.forEach(obj => {
+                const entityEl = document.createElement('a-entity');
+                
+                // Set all properties from the YAML object
+                Object.entries(obj).forEach(([key, value]) => {
+                    entityEl.setAttribute(key, value);
+                });
+
+                sceneEl.appendChild(entityEl);
+                console.log(`[xrmitch]: Loaded entity ${obj.id}`);
+            });
+        };
+
+        if (sceneEl.hasLoaded) {
+            addEntities();
+        } else {
+            sceneEl.addEventListener('loaded', addEntities);
+        }
+    } catch (e) {
+        console.error("[xrmitch]: Error loading objects.yaml", e);
+    }
+}
+
+loadObjects();
+
 AFRAME.registerComponent('grid-sky', {
     init: function () {
         const canvas = document.createElement('canvas');
