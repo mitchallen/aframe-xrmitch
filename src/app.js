@@ -6,6 +6,37 @@ import {moveWhereLooking} from './move-where-looking.js'
 
 console.log("[xrmitch]: running.")
 
+AFRAME.registerComponent('grid-sky', {
+    init: function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 64;
+        canvas.height = 64;
+        const ctx = canvas.getContext('2d');
+        
+        // Background
+        ctx.fillStyle = 'black';
+        ctx.fillRect(0, 0, 64, 64);
+        
+        // Dot
+        ctx.fillStyle = '#444'; // Light gray
+        ctx.beginPath();
+        ctx.arc(32, 32, 1, 0, Math.PI * 2);
+        ctx.fill();
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+        // Increase repeat to make dots smaller and more frequent
+        texture.repeat.set(128, 64);
+        
+        const mesh = this.el.getObject3D('mesh');
+        if (mesh) {
+            mesh.material.map = texture;
+            mesh.material.needsUpdate = true;
+        }
+    }
+});
+
 AFRAME.registerComponent('thumbstick-logging',{
     init: function() {
         this.el.addEventListener('thumbstickmoved', this.logThumbstick);
